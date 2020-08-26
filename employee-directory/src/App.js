@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Title from "./components/title";
 import List from "./components/list";
+import "bootstrap/dist/css/bootstrap.min.css"
 
 function App() {
   return (

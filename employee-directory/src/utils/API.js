@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const randomURL = "https://randomuser.me/api/?results=20";
+const randomURL = "https://randomuser.me/api/?results=10";
 
 export default {
     getData: function() {
