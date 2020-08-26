@@ -30,7 +30,7 @@ class List extends Component {
                     firstName={user.name.first}
                     lastName={user.name.last}
                     email={user.email}
-                    birthday={user.dob.age}
+                    age={user.dob.age}
                     image={user.picture.medium}
                     />
               </Wrapper>
