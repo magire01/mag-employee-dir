@@ -21,6 +21,21 @@ class List extends Component {
         .catch(err => console.log(err));
     }
 
+    sortByName = () => {
+        const sortedResults = this.state.results;
+        sortedResults.sort((a, b) => {
+            if (a.name.first < b.name.first) {
+                return -1;
+            } else if (a.name.first > b.name.first) {
+                return 1;
+            } else {
+                return 0;
+            }
+        })
+        this.setState({ results: sortedResults });
+        
+    }
+
     renderContent = () => {
         return this.state.results.map(user => {
           return (
@@ -44,6 +59,14 @@ class List extends Component {
         return (
             <div className="container">
                 <h3> List </h3>
+                <div className ="row">
+                    <div className="col-md-3">
+                        <button className="btn btn-primary" onClick={this.sortByName}>Sort by Name</button>
+                    </div>
+                    <div className="col-md-3">
+                        <button className="btn btn-primary">Sort by Age</button>
+                    </div>
+                </div>
                 {this.renderContent()}
             </div>
         )
