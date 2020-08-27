@@ -73,7 +73,7 @@ class List extends Component {
     render() {
         return (
             <div className="container">
-                <h3> List </h3>
+                <h3> Current Employees </h3>
                 <div className ="row">
                     <div className="col-md-3">
                         <button className="btn btn-primary" onClick={this.sortByName}>Sort by Name</button>
