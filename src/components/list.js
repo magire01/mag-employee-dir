@@ -36,6 +36,21 @@ class List extends Component {
         
     }
 
+    sortByAge = () => {
+        const sortedResults = this.state.results;
+        sortedResults.sort((a, b) => {
+            if (a.dob.age < b.dob.age) {
+                return -1;
+            } else if (a.dob.age > b.dob.age) {
+                return 1;
+            } else {
+                return 0;
+            }
+        })
+        this.setState({ results: sortedResults });
+        
+    }
+
     renderContent = () => {
         return this.state.results.map(user => {
           return (
@@ -64,7 +79,7 @@ class List extends Component {
                         <button className="btn btn-primary" onClick={this.sortByName}>Sort by Name</button>
                     </div>
                     <div className="col-md-3">
-                        <button className="btn btn-primary">Sort by Age</button>
+                        <button className="btn btn-primary" onClick={this.sortByAge}>Sort by Age</button>
                     </div>
                 </div>
                 {this.renderContent()}
