@@ -6,7 +6,8 @@ import Wrapper from "./wrapper";
 
 class List extends Component {
     state = {
-    results: []
+    results: [],
+    searchResults: []
     }
 
     componentDidMount() {
@@ -50,6 +51,19 @@ class List extends Component {
         this.setState({ results: sortedResults });
         
     }
+
+    searchByName = (evt) => {
+        const allResults = this.state.results;
+        let searchValue = evt.target.value;
+        allResults.filter(result => {
+            if(searchValue === result.name.first) {
+                return this.setState({ searchResults: result });
+            }
+        });
+        this.renderSearch();
+    }
+
+
 
     renderContent = () => {
         return this.state.results.map(user => {
